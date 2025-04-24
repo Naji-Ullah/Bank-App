@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function Login({ users, setCurrentUser }) {
   const [username, setUsername] = useState("");
@@ -23,6 +25,9 @@ export default function Login({ users, setCurrentUser }) {
                 <input className="border p-2 w-full mb-2" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input className="border p-2 w-full mb-2" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <button className="bg-blue-500 text-white p-2 w-full" onClick={handleLogin}>Login</button>
+            <Link to="/ForgotPassword" className="text-sm text-blue-400 hover:underline block text-center mt-2">
+            Forgot Password?
+            </Link>
         </div>
     </div>
   );

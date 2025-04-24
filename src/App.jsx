@@ -15,6 +15,7 @@ import { CardDeals } from "./components";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import Forgot from "./components/Forgot";
 
 import usersData from "./users.json"; 
 
@@ -60,6 +61,8 @@ function App() {
         />
         <Route path="/login" element={<Login users={users} setCurrentUser={setCurrentUser} />} />
         <Route path="/register" element={<Register users={users} setUsers={setUsers} />} />
+        <Route path="/ForgotPassword" element={<Forgot users={users} />} />
+
         <Route
           path="/dashboard"
           element={currentUser ? <Dashboard user={currentUser} /> : <Login users={users} setCurrentUser={setCurrentUser} />}

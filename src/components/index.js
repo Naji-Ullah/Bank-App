@@ -11,6 +11,7 @@ import CardDeals from "./CardDeals";
 import Login from "./Login";
 import Register from "./Register";
 import Dashboard from "./Dashboard";
+import Forgot from "./Forgot";
 
 export{
     Navbar,
@@ -25,5 +26,6 @@ export{
     CardDeals,
     Login,
     Register,
-    Dashboard
+    Dashboard,
+    Forgot
 }
