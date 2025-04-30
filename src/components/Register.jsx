@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "../features/userslice/userSlice";
 
-export default function Register({ users, setUsers }) {
+
+export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [balance, setBalance] = useState(0);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.users);
 
   const handleRegister = () => {
     const invalidCharRegex = /[^a-zA-Z0-9]/;
@@ -13,6 +17,7 @@ export default function Register({ users, setUsers }) {
       alert("Username should not contain special characters.");
       return;
     }
+    
     if (invalidCharRegex.test(password)) {
       alert("Password should not contain special characters.");
       return;
@@ -29,8 +34,8 @@ export default function Register({ users, setUsers }) {
       return;
     }
 
-    const newUser = { username, password };
-    setUsers([...users, newUser]);
+    const newUser = { username, password, balance: 0 };
+    dispatch(registerUser(newUser))
     alert("Registered! Welcome.");
     navigate("/Dashboard");
   };

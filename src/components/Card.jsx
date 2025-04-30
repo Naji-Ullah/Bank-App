@@ -27,7 +27,6 @@ class Cards extends Component {
         </div>
 
         <div className="flex flex-wrap justify-center gap-10 w-full max-w-7xl">
-          {/* Card 1 */}
           <Card className="w-full sm:w-[300px] md:w-[350px] lg:w-96 bg-gradient-to-r from-black via-gray-800 to-black border border-yellow-800 mt-10">
             <CardHeader color="black" className="relative h-56">
               <img
@@ -55,7 +54,6 @@ class Cards extends Component {
             </CardFooter>
           </Card>
 
-          {/* Card 2 */}
           <Card className="w-full sm:w-[300px] md:w-[350px] lg:w-96 bg-gradient-to-r from-black via-gray-800 to-black border border-yellow-800 mt-20">
             <CardHeader color="black" className="relative h-56">
               <img
@@ -82,7 +80,6 @@ class Cards extends Component {
             </CardFooter>
           </Card>
 
-          {/* Card 3 */}
           <Card className="w-full sm:w-[300px] md:w-[350px] lg:w-96 bg-gradient-to-r from-black via-gray-800 to-black border border-yellow-800 mt-10">
             <CardHeader color="black" className="relative h-56">
               <img
@@ -116,3 +113,47 @@ class Cards extends Component {
 }
 
 export default Cards;
+
+
+
+
+
+
+
+// import { createSlice } from "@reduxjs/toolkit";	
+
+// const initialState = {
+//     currentUser: null,
+//     users: []
+// };
+
+// const userSlice = createSlice({
+//     name: 'user',
+//     initialState,
+//     reducers: {
+//         registerUser: (state, action) =>{
+//             state.users.push(action.payload);
+//         },
+
+//         loginUser: (state, action) => {
+//             state.currentUser = action.payload;
+//         },
+
+//         logoutUser: (state, action) => {
+//             state.currentUser = null;
+//         },
+
+//         setUsers: (state,action) => {
+//             state.users = action.payload;
+//         },
+//         updateBalance: (state, action) => {
+//             if (state.currentUser) {
+//               state.currentUser.balance += action.payload;
+//             }
+//           },
+
+//     },
+// });
+
+// export const {registerUser, loginUser, setUsers, logoutUser, updateBalance} = userSlice.actions;
+// export default userSlice.reducer;

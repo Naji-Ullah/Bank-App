@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { loginUser } from "../features/userslice/userSlice";
 
 
-export default function Login({ users, setCurrentUser }) {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.users);
 
   const handleLogin = () => {
     const user = users.find((u) => u.username === username && u.password === password);
     if (user) {
-      setCurrentUser(user);
+      dispatch(loginUser(user));
       navigate("/dashboard");
     } else {
       alert("Invalid Username or Password");

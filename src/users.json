@@ -1,11 +1,20 @@
 [
     {
       "username": "testuser",
-      "password": "123456"
+      "password": "123456",
+      "balance": 34
+    },
+    {
+      "username": "najiullah",
+      "password": "password",
+      "balance": 10
+
     },
     {
       "username": "johndoe",
-      "password": "password"
+      "password": "johndoeis",
+      "balance": 100
+
     }
   ]
   

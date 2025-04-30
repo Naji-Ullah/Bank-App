@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import FormInput from "../components/FormInput";
 import styles from "../style";
-import { complex, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm({ scaleUpVariants }) {

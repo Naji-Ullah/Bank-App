@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 
-const Forgot = ({ users }) => {
+
+
+
+
+const Forgot = () => {
+    const users = useSelector((state) => state.user.users);
     const [username, setUsername] = useState('');
     const [hint, setHint] = useState(null);
 

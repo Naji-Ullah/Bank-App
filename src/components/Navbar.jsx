@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="h-[48px] bg-gray-100">
-      {/* Navbar with black gradient */}
       <nav className="bg-gradient-to-r from-black via-gray-800 to-black border-hidden border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-12">
@@ -69,7 +68,6 @@ function Navbar() {
                 placeholder="Search"
               />
             </div>
-            {/* Right side - Icons */}
             <div className="flex items-center space-x-4">
               <button className="text-gray-300 hover:text-white p-2 rounded-full hover:bg-gray-800 transition-colors">
                 <Search className="h-5 w-5" />

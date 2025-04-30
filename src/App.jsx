@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { setUsers } from "./features/userslice/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import usersData from "./users.json";
 
 import Navbar from "./components/Navbar";
 import CarouselDefault from "./components/Hero";
@@ -17,11 +20,17 @@ import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Forgot from "./components/Forgot";
 
-import usersData from "./users.json"; 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [users, setUsers] = useState(usersData);
+
+
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(setUsers(usersData));
+  },[dispatch])
+
 
   const scaleUpVariants = {
     hidden: {
@@ -59,14 +68,10 @@ function App() {
             </>
           }
         />
-        <Route path="/login" element={<Login users={users} setCurrentUser={setCurrentUser} />} />
-        <Route path="/register" element={<Register users={users} setUsers={setUsers} />} />
-        <Route path="/ForgotPassword" element={<Forgot users={users} />} />
-
-        <Route
-          path="/dashboard"
-          element={currentUser ? <Dashboard user={currentUser} /> : <Login users={users} setCurrentUser={setCurrentUser} />}
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/ForgotPassword" element={<Forgot  />} />
+        <Route path="/dashboard" element={ <Dashboard />} />
       </Routes>
     </Router>
   );
